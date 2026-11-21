@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I'm Sorry, Khushi 🤍</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;color:#493b43;
+    font-family:'DM Sans',sans-serif;background:radial-gradient(circle at 15% 15%,#fff7f7 0,transparent 32%),
+    radial-gradient(circle at 85% 80%,#f6e8ef 0,transparent 35%),linear-gradient(135deg,#fceff1,#f8edf3 55%,#f5eaf0);overflow-x:hidden}
+  .petal{position:fixed;top:-30px;color:#d99eaf;opacity:.45;pointer-events:none;animation:fall linear infinite}
+  @keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+  .card{position:relative;width:min(100%,650px);padding:clamp(30px,7vw,62px);text-align:center;background:rgba(255,255,255,.76);
+    border:1px solid rgba(255,255,255,.9);border-radius:28px;box-shadow:0 24px 80px rgba(119,75,94,.13);backdrop-filter:blur(12px)}
+  .flower{font-size:42px;margin-bottom:12px;filter:drop-shadow(0 5px 8px #e7c5d1)}
+  .eyebrow{letter-spacing:4px;text-transform:uppercase;font-size:11px;color:#ad778d;font-weight:600}
+  h1{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(42px,8vw,64px);line-height:1.08;margin:16px 0;color:#70485b}
+  h1 em{color:#bd8299}
+  .divider{width:54px;height:2px;background:#d9a8ba;margin:25px auto}
+  .message{font-size:16px;line-height:1.9;color:#66545e;max-width:475px;margin:auto}
+  .message strong{color:#87586e;font-weight:600}
+  .note{font-family:'Playfair Display',serif;font-style:italic;font-size:21px;color:#95677c;margin:28px 0 8px}
+  button{border:0;border-radius:999px;padding:14px 27px;background:#9f6d83;color:white;font:600 14px 'DM Sans',sans-serif;
+    cursor:pointer;box-shadow:0 8px 20px rgba(159,109,131,.22);transition:.2s}
+  button:hover{transform:translateY(-2px);background:#89586f}
+  .response{min-height:28px;margin-top:18px;color:#96657c;font-size:14px}
+  footer{margin-top:30px;color:#b18c9c;font-size:11px;letter-spacing:1.5px}
+  @media(max-width:480px){.card{border-radius:22px}.message{font-size:15px}}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="flower">🪷</div>
+  <div class="eyebrow">A little note for you</div>
+  <h1>I'm sorry,<br><em>Khushi.</em></h1>
+  <div class="divider"></div>
+  <div class="message">
+    I know I didn't reply on time, and I'm genuinely sorry for that.
+    I never wanted you to feel ignored or think that you don't matter to me.
+    <br><br>
+    I should've communicated instead of leaving you waiting.
+    I can't take back the time you spent waiting for my reply, but I can promise
+    to be more thoughtful about it next time.
+    <br><br>
+    <strong>You deserve consideration, not excuses.</strong>
+    I hope you can forgive me. And whenever you're ready, I'd really like to talk. 🤍
+  </div>
+  <div class="note">No pressure. Just a sincere sorry.</div>
+  <button onclick="showMessage()">One more thing…</button>
+  <div class="response" id="response" aria-live="polite"></div>
+  <footer>MADE WITH CARE · JUST FOR YOU</footer>
+</div>
+<script>
+  const messages = [
+    "You matter to me, Khushi. I’ll try to show that better. 🤍",
+    "I may be late sometimes, but I never want you to feel unimportant.",
+    "Whenever you're ready, I'm here. No pressure. 🌷"
+  ];
+  let index = 0;
+  function showMessage(){
+    document.getElementById('response').textContent = messages[index % messages.length];
+    index++;
+  }
+  for(let i=0;i<17;i++){
+    const p=document.createElement('div'); p.className='petal'; p.textContent=['✿','❀','·'][i%3];
+    p.style.left=Math.random()*100+'vw'; p.style.animationDuration=(9+Math.random()*12)+'s';
+    p.style.animationDelay=(-Math.random()*18)+'s'; p.style.fontSize=(12+Math.random()*16)+'px';
+    document.body.appendChild(p);
+  }
+</script>
+</body>
+</html>
